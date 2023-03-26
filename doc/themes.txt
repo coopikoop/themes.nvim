@@ -1,0 +1,272 @@
+*themes.txt*        For Neovim >= 0.8.0        Last change: 2023 March 26
+
+==============================================================================
+Table of Contents                              *themes-table-of-contents*
+
+  - Pro                                                      	  |themes-pro|
+  - Octagon                                                   |themes-octagon|
+  - Machine                                                   |themes-machine|
+  - Ristretto                                               |themes-ristretto|
+  - Spectrum                                                 |themes-spectrum|
+  - Classic                                                   |themes-classic|
+  - Gruvbox                                                   |themes-gruvbox|
+  - Installation                                         |themes-installation|
+  - Configuration                                       |themes-configuration|
+  - Usage                                                       |themes-usage|
+  - Command                                                   |themes-command|
+
+
+PRO                                                               *themes-pro*
+
+
+OCTAGON                                                       *themes-octagon*
+
+
+MACHINE                                                       *themes-machine*
+
+
+RISTRETTO                                                   *themes-ristretto*
+
+
+SPECTRUM                                                     *themes-spectrum*
+
+
+CLASSIC                                                       *themes-classic*
+
+
+GRUVBOX                                                       *themes-gruvbox*
+
+
+PLUGIN SUPPORT ~
+
+
+- alpha-nvim <https://github.com/goolord/alpha-nvim>
+- bufferLine.nvim <https://github.com/akinsho/bufferline.nvim>
+- Cmp <https://github.com/hrsh7th/nvim-cmp>
+- vim-illuminate <https://github.com/RRethy/vim-illuminate>
+- indent-blankline <https://github.com/lukas-reineke/indent-blankline.nvim>
+- neo-tree.nvim <https://github.com/nvim-neo-tree/neo-tree.nvim>
+- nvim-notify <https://github.com/rcarriga/nvim-notify>
+- renamer.nvim <https://github.com/filipdutescu/renamer.nvim>
+- lualine.nvim <https://github.com/nvim-lualine/lualine.nvim>
+- telescope.nvim <https://github.com/nvim-telescope/telescope.nvim>
+- toggleterm.nvim <https://github.com/akinsho/toggleterm.nvim>
+- nvim-treesitter <https://github.com/nvim-treesitter/nvim-treesitter>
+- which-key.nvim <https://github.com/folke/which-key.nvim>
+- breadcrumb.nvim <https://github.com/loctvl842/breadcrumb.nvim>
+- nvim-navic <https://github.com/SmiteshP/nvim-navic>
+- wilder.nvim <https://github.com/gelguy/wilder.nvim>
+- Lightline <https://github.com/itchyny/lightline.vim>
+- barbecue.nvim <https://github.com/utilyre/barbecue.nvim>
+- dashboard-nvim <https://github.com/glepnir/dashboard-nvim>
+- mason.nvim <https://github.com/williamboman/mason.nvim>
+
+
+INSTALLATION                                             *themes-installation*
+
+vim-plug <https://github.com/junegunn/vim-plug>
+
+>vim
+    Plug 'coopikoop/themes.nvim'
+<
+
+packer <https://github.com/wbthomason/packer.nvim>
+
+>lua
+    use {
+      "coopikoop/themes.nvim",
+      config = function()
+        require("themes").setup()
+      end
+    }
+<
+
+
+CONFIGURATION                                           *themes-configuration*
+
+There are several themes included in this plugin.
+
+
+- |themes-pro| – Monokai Pro _(default)_
+- |themes-octagon| – Monokai Pro (Filter Octagon)
+- |themes-machine| – Monokai Pro (Filter Machine)
+- |themes-ristretto| – Monokai Pro (Filter Machine)
+- |themes-spectrum| – Monokai Pro (Filter Machine)
+- |themes-classic| – Monokai Classic
+- |themes-gruvbox| – Gruvbox (dark, hard contrast)
+
+Example configuration:
+
+>lua
+    require("themes").setup({
+      transparent_background = false,
+      terminal_colors = true,
+      devicons = true, -- highlight the icons of `nvim-web-devicons`
+      styles = {
+        comment = { italic = true },
+        keyword = { italic = true }, -- any other keyword
+        type = { italic = true }, -- (preferred) int, long, char, etc
+        storageclass = { italic = true }, -- static, register, volatile, etc
+        structure = { italic = true }, -- struct, union, enum, etc
+        parameter = { italic = true }, -- parameter pass in function
+        annotation = { italic = true },
+        tag_attribute = { italic = true }, -- attribute of tag in reactjs
+      },
+      filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
+      -- Enable this will disable filter option
+      day_night = {
+        enable = false, -- turn off by default
+        day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
+        night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
+      },
+      inc_search = "background", -- underline | background
+      background_clear = {
+        -- "float_win",
+        "toggleterm",
+        "telescope",
+        "which-key",
+        "renamer"
+      },-- "float_win", "toggleterm", "telescope", "which-key", "renamer", "neo-tree"
+      plugins = {
+        bufferline = {
+          underline_selected = false,
+          underline_visible = false,
+        },
+        indent_blankline = {
+          context_highlight = "default", -- default | pro
+          context_start_underline = false,
+        },
+      },
+      ---@param c Colorscheme
+      override = function(c) end,
+    })
+<
+
+
+- Check my nvim <https://github.com/loctvl842/nvim> to see my plugins setup for `border` if you want to set `background_clear`
+
+For example:
+
+float_win ~
+
+>lua
+    require("themes").setup({
+        -- ... your config
+        background_clear = { "float_win" }
+        -- ... your config
+    })
+    
+    require("cmp").setup({
+        -- ... your config
+        window = {
+          border = "rounded",
+        }
+        completion = {
+            border = "rounded",
+        }
+        -- ... your config
+    })
+<
+
+
+- With the above config:
+- With the default config:
+
+Telescope ~
+
+>lua
+    require("themes").setup({
+        -- ... your config
+        background_clear = {}
+        -- ... your config
+    })
+    
+    require("telescope").setup({
+        -- ... your config
+        defaults = {
+          borderchars = { "", " ", "", "", "", " ", " ", "" },
+        }
+        -- ... your config
+    })
+<
+
+
+- With the above config:
+
+
+- With the default config:
+
+
+USAGE                                                           *themes-usage*
+
+
+- Enable this colorscheme by using the following command after `setup`
+
+>vim
+    " Vim Script
+    colorscheme themes
+<
+
+>lua
+    require("themes").setup({
+      -- ... your config
+    })
+    -- lua
+    vim.cmd([[colorscheme themes]])
+<
+
+
+- Toenable `themes` for `Lualine`
+
+>lua
+    require('lualine').setup {
+      options = {
+        -- ...
+        theme = 'themes'
+        -- ...
+      }
+    }
+<
+
+
+- Toenable `themes` for `barbecue`
+
+>lua
+    require('barbecue').setup {
+      -- ...
+      theme = 'themes'
+      -- ...
+    }
+<
+
+
+- Toenable `themes` for `lightline`
+
+>vim
+    " Vim Script
+    let g:lightline = {'colorscheme': 'themes'}
+<
+
+
+- Overridefunction:
+
+>lua
+    require("themes").setup({
+        -- ...
+        override = function
+          return {
+              Normal = { bg = "000000" }
+            }
+        end
+        -- ...
+      })
+<
+
+
+COMMAND                                                       *themes-command*
+
+
+- run command `ThemeSelect` to launch a menu to choose theme filter (required: nui.nvim <https://github.com/MunifTanjim/nui.nvim>)
+- or we can run command `Themes` with parameter to change theme filter: For example:
+    > `Themes gruvbox`
+
