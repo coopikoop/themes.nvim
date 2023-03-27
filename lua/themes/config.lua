@@ -17,11 +17,11 @@ local default = {
     annotation = { italic = true },
     tag_attribute = { italic = true }, -- attribute of tag in reactjs
   },
-  filter = vim.o.background == "light" and "classic" or "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
+  filter = vim.o.background == "light" and "classic" or "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox | tasty | omni
   day_night = {
     enable = false,
-    day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
-    night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox
+    day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox | tasty | omni
+    night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum | gruvbox | tasty | omni
   },
   inc_search = "background", -- underline | background
   background_clear = {

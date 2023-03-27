@@ -15,6 +15,8 @@ T.create_filter_command = function()
       "ristretto",
       "spectrum",
       "gruvbox",
+      "tasty",
+      "omni",
     }, function(item)
       local filter = item.value
       config.extend({ filter = filter })
@@ -39,6 +41,8 @@ T.create_filter_command = function()
         "ristretto",
         "spectrum",
         "gruvbox",
+        "tasty",
+        "omni",
       }
     end,
   })
