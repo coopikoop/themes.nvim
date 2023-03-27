@@ -9,11 +9,13 @@ T.create_filter_command = function()
   cmd("ThemeSelect", function()
     local menu = util.create_menu("Set theme", {
       "classic",
+      "classic-fd",
       "octagon",
       "pro",
       "machine",
       "ristretto",
       "spectrum",
+      "spectrum-fd",
       "gruvbox",
       "tasty",
       "omni",
@@ -35,11 +37,13 @@ T.create_filter_command = function()
     complete = function()
       return {
         "classic",
+        "classic-fd",
         "octagon",
         "pro",
         "machine",
         "ristretto",
         "spectrum",
+        "spectrum-fd",
         "gruvbox",
         "tasty",
         "omni",

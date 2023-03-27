@@ -8,12 +8,12 @@ local M = {
 
 local hp = require("themes.color_helper")
 
---- @param filter "classic" | "machine" | "octagon" | "pro" | "ristretto" | "spectrum" | "gruvbox" | "tasty" | "omni"
+--- @param filter "classic" | "classic-fd" | "machine" | "octagon" | "pro" | "ristretto" | "spectrum" | "spectrum-fd" | "gruvbox" | "tasty" | "omni"
 M.setup = function(filter)
-  local filters = { "classic", "machine", "octagon", "pro", "ristretto", "spectrum", "gruvbox", "tasty", "omni" }
+  local filters = { "classic", "classic-fd", "machine", "octagon", "pro", "ristretto", "spectrum", "spectrum-fd", "gruvbox", "tasty", "omni" }
 
   if not vim.tbl_contains(filters, filter) then
-    local msg = 'Invalid filter, expected "classic", "machine", "octagon", "pro", "ristretto", "spectrum", "gruvbox", "tasty", or "omni"'
+    local msg = 'Invalid filter, expected "classic", "classic-fd", "machine", "octagon", "pro", "ristretto", "spectrum", "spectrum-fd", "gruvbox", "tasty", or "omni"'
     local level = "info"
     filter = "pro"
     util.notify(msg, level)
