@@ -1,0 +1,17 @@
+return {
+  dark2 = "#444444",
+  dark1 = "#222222",
+  background = "#000000",
+  text = "#ffffff",
+  accent1 = "#ff0000",
+  accent2 = "#ff8800",
+  accent3 = "#ffff00",
+  accent4 = "#00ff00",
+  accent5 = "#00ffff",
+  accent6 = "#ff00ff",
+  dimmed1 = "#eeeeee",
+  dimmed2 = "#cccccc",
+  dimmed3 = "#aaaaaa",
+  dimmed4 = "#888888",
+  dimmed5 = "#666666",
+}

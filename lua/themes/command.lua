@@ -19,6 +19,7 @@ T.create_filter_command = function()
       "gruvbox",
       "tasty",
       "omni",
+      "fulldark",
     }, function(item)
       local filter = item.value
       config.extend({ filter = filter })
@@ -47,6 +48,7 @@ T.create_filter_command = function()
         "gruvbox",
         "tasty",
         "omni",
+        "fulldark",
       }
     end,
   })
